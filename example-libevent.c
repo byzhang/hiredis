@@ -6,6 +6,8 @@
 #include "async.h"
 #include "adapters/libevent.h"
 
+extern struct event_base *event_base_new(void);
+
 void getCallback(redisAsyncContext *c, void *r, void *privdata) {
     redisReply *reply = r;
     if (reply == NULL) return;
